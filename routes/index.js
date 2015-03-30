@@ -63,7 +63,8 @@ exports = module.exports = function(app) {
 	app.get('/about', routes.views.about);
 	app.get('/mentoring', routes.views.mentoring);
 
-	app.get('/groups', routes.views.groups);
+	app.get('/groups', routes.views.groups); // 29Mar15Tec: lists all groups
+//	app.get('/group/:group', routes.views.group); //30Mar15Tec: this is the group "homepage"
 	
 	app.get('/showbag', routes.views.showbag);
 	

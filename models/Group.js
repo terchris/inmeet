@@ -28,7 +28,7 @@ Group.add({
  */
 
 Group.relationship({ ref: 'User', refPath: 'groups', path: 'usergroups' });
-
+Group.relationship({ ref: 'Meetup', refPath: 'group', path: 'meetupgroup' }); //30Mar15Tec: relation so that it is possible to find meetups by the group
 
 /**
  * Registration
