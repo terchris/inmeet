@@ -15,8 +15,8 @@ var keystone = require('keystone'),
 
 keystone.init({
 
-	'name': 'SydJS',
-	'brand': 'SydJS',
+	'name': 'BusinessModel',
+	'brand': 'BusinessModel',
 	'back': '/me',
 
 	'favicon': 'public/favicon.ico',
