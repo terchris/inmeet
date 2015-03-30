@@ -1,0 +1,19 @@
+extends ../../layouts/default
+
+include ../../mixins/group
+	
+block intro
+	.page-intro: .container
+		h1 User Groups
+		p.lead The different BusinessModel.io user groups 
+		
+block content
+	.page-content: .container
+		.groups
+			if groups.length
+				each org, i in groups
+					if i
+						hr
+					+group(org)
+			else
+				h3.text-muted There are no groups yet.

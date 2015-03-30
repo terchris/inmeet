@@ -1,0 +1,51 @@
+extends ../../layouts/default
+
+include ../../mixins/organiser
+
+block intro
+	.page-intro: .container
+		h1.page-title About
+		p.lead Business Model Workshops (previously BMUG) is organisation and community of entrepreneurs
+		p.lead We run innovation workshops, mentor startups, participate in accelerator programs and help established companies to innovate like startups.
+
+block content
+	.page-content
+		.section.highlight: .container
+			//- h2 Organisers
+			//- p.lead Each month the SydJS team works to bring you great presenters in a great venue.
+			.row.about-organisers
+				each org in organisers
+					.col-sm-3
+						+organiser(org)
+			
+		
+		//- CODE
+		.section: .container-sm
+			h2 Who is attending the workshops?
+			p A truly diverse group of entrepreneurs, students, business consultants, programmers, designers, social entrepreneurs. Many of them working as consultants in their “daytime” job.
+			p Where else can a local startup go and get this kind of input to their business model? The advice is often priceless as it represents so many different experiences and perspectives. It’s inspiring to find a group that meets, learns and shares in their spare time, just for fun.
+			h2 Is it free?
+			p Our public events are free as we earn money by organising similar workshops in large corporations.
+			h2 Our Recipe
+			p We have found a recipe for creating a learning experience in a fun and social environment. When we bring together people from different fields of expertise we often see new creative ideas for how to create value and money for the startup in question surface. A lot of people want to learn more about business modelling, not only entrepreneurs, but also students and intrapreneurs. We recommend the following approach in order to get a creative and fun atmosphere for sharing, playing and learning.
+			h4 Good atmosphere
+			p It can be in the office space, the canteen, restaurant or bar. It does not really matter as long as the place is informal and has a good atmosphere.
+			h4 It’s all about sharing
+			p It´s all about about sharing. So we start with sharing food. Sharing food is a social thing and tearing apart pizza slices with your hands is as close you get to what humans did in the beginning of time.
+			h4 Introduction to the method (Business Model Generation / Lean Canvas / Google design sprint ...)
+			p We start the introduction to the methos we are using to the meetup. We usually invite someone to do the introduction. We always start with a introduction because there can be people attending that is not familiar with the method.
+			h4 Case of the evening Presentation
+			p The case of the evening can be from a local startup company. Or someone that have an idea that they want us to play with. This is far better than going to a seminar to work on a constructed case. Here you have the eager entrepreneur presenting his or her ideas.
+			h4 Work on the case in groups
+			p Only listening is not fun, so after the case of the evening presentation we will split into groups and practice what we have learned. This is social and fun – learning something new is fun and not hard at all. We learn from each other and when we get the right mix of people on a team the ideas fly.
+			h4 Presenting group solutions
+			p At the end of the meeting we gather and the different groups present their work.
+			p 
+			hr.mv-3
+			h5 Everyone wins
+			p We get to play, learn, meet people and socialise. And the local startup or entrepreneur gets valuable input from a diverse group of innovators.
+
+block js
+	// twitter
+	script.
+		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
