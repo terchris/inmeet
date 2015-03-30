@@ -2,12 +2,13 @@ mixin group(org)
 	.col-sm-4
 		article(role="article", itemscope itemtype="http://schema.org/BlogPosting").post-card
 			if org.logo.exists
-				a(href='/blog/post/' + org.slug).post-image: img(src=org._.logo.thumbnail(600,320), alt=org.name).img-responsive
+				a(href='/group/' + org.key).post-image: img(src=org._.logo.thumbnail(600,320), alt=org.name).img-responsive
 			.post-summary
 				.post-byline
 					.post-author: = 'In the city of ' + org.city + ', ' + org.country
 
 				h4(itemprop='name').post-title.mv-1
-					a(href='/blog/post/' + org.slug, itemprop='url')=org.name
-				.post-content-brief(itemprop='description')!= org.description.html				
+					a(href='/group/' + org.key, itemprop='url')=org.name
+				.post-content-brief(itemprop='description')!= utils.cropString( utils.htmlToText(org.description.html), 100, '...', true )
+				
 //30Mar15Tec: Jerry the output is not good. I have tweaked a blog post - you fix

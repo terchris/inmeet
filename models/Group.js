@@ -17,8 +17,17 @@ Group.add({
     name: { type: String, required: true },
     country: { type: Types.Select, options: 'Norway, Hungary, Australia, Germany, Poland, Brazil', default: 'Norway', index: true },
     logo: { type: Types.CloudinaryImage },
-    description: { type: Types.Markdown },
-    city: { type: String, label: 'Type city...' }
+    eventtopimage : { type: Types.CloudinaryImage },
+    eventbottomimage : { type: Types.CloudinaryImage },
+    slogan: { type: String, label: 'Slogan goes below the event' },
+    description: { type: Types.Markdown, label: 'Description of the group goes below the event' },
+    
+    city: { type: String, label: 'Type city...' },
+    
+    twitter: { type: Types.Url,  label: 'Type twitter URL' },
+    meetup: { type: Types.Url, label: 'Type Meetup URL' },
+    facebook: { type: Types.Url, label: 'Type Facebook URL'}
+    
 });
 
 
