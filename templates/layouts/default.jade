@@ -14,11 +14,37 @@ html
 		meta(name="viewport", content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width")
 
 		//- Appstore smart banner
-		meta(name="apple-itunes-app", content="app-id=897396382")
+		//- meta(name="apple-itunes-app", content="app-id=897396382")
 		
-		title= page.title
+		//- title= page.title - where is this coming from? - #fix
+		
+		
+		title= "Innovation Meetups"
+		
+		meta(name='description', content='Community For Innovation Experts')
+		meta(name='copyright', content='Copyright (c) 2015 Innovation Meetups')
+		
+		
+		// Twitter Card data
+		meta(name='twitter:title', content='Innovation Meetups')
+		meta(name='twitter:description', content='Community For Innovation Experts')
+		meta(name='twitter:image', content='http://www.helsestell.no/img/twitter-card.png')
+		meta(name='twitter:url', content='http://www.helsestell.no')
+		meta(name='twitter:card', content='summary')
+		meta(name='twitter:site', content='@Innovation Meetups')
+		
+		
+		// Open Graph data
+		meta(property='og:title', content='Innovation Meetups')
+		meta(property='og:description', content='Community For Innovation Experts')
+		meta(property='og:image', content='http://www.helsestell.no/img/og.png')
+		meta(property='og:url', content='http://www.helsestell.no')
+		meta(property='og:site_name', content='Innovation Meetups')
+		
 		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
 		link(href="/styles/site.min.css", rel="stylesheet")
+		
+		
 		
 		if user && user.canAccessKeystone
 			link(href="/keystone/styles/content/editor.min.css", rel="stylesheet")

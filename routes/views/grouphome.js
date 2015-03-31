@@ -19,7 +19,7 @@ exports = module.exports = function(req, res) {
 
     locals.section = 'home'; //Tec: change to grouphome ?
     locals.meetup = false;
-    locals.page.title = 'Welcome to SydJS';
+    locals.page.title = 'Innovation Meetups';
 
     locals.rsvpStatus = {};
 

@@ -2,18 +2,20 @@ extends ../../layouts/default
 
 include ../../mixins/group
 	
+
 block intro
 	.page-intro: .container
-		h1 User Groups
-		p.lead The different BusinessModel.io user groups 
-		
+		h1.page-title 'User Groups'
+		p.lead
+			| The different user groups.&nbsp;
+			a(href='/join').js-auth-trigger Join now
+			| &nbsp;to contribute.
+
 block content
 	.page-content: .container
-		.groups
-			if groups.length
-				each org, i in groups
-					if i
-						hr
+		if groups.length
+			.post-cards.row(itemscope itemtype="http://schema.org/Blog")
+				each org in groups
 					+group(org)
-			else
-				h3.text-muted There are no groups yet.
+		else
+			h3.text-muted There are no posts yet.
