@@ -15,8 +15,8 @@ var keystone = require('keystone'),
 
 keystone.init({
 
-	'name': 'BusinessModel',
-	'brand': 'BusinessModel',
+	'name': 'Innovation Meetups',
+	'brand': 'InMeet',
 	'back': '/me',
 
 	'favicon': 'public/favicon.ico',
