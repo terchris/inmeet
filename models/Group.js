@@ -20,6 +20,7 @@ Group.add({
     eventTopImage : { type: Types.CloudinaryImage },
     eventBottomImage : { type: Types.CloudinaryImage },
     slogan: { type: String, label: 'Slogan goes below the event' },
+    organisers: { type: Types.Relationship, ref: 'User', many: true, index: true },
     description: { type: Types.Markdown, label: 'Description of the group goes below the event' },
     
     city: { type: String, label: 'Type city...' },

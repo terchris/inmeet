@@ -4,6 +4,8 @@ extends ../../layouts/default
 include ../../mixins/post
 include ../../mixins/meetup-talk
 include ../../mixins/advertisement
+include ../../mixins/organiser
+	
 //- INTRO
 block intro
 	//- HERO
@@ -43,7 +45,7 @@ block intro
 				.hero-intro-content
 					h5.subtitle #{meetup.state == 'active' ? 'Next' : 'Last'} Meetup
 					h1.title= meetup.name
-					p.byline: strong #{meetup._.startDate.format('ddd, DD MMM YYYY')} &#8212; #{meetup._.startDate.format('h:mma')} - #{meetup._.endDate.format('h:mma')}
+					p.byline: strong #{meetup._.startDate.format('ddd, DD MMM YYYY')} &#8212; #{meetup._.startDate.format('h:mma')} - #{meetup._.endDate.format('hh:mma')}
 					p.byline #{meetup.place} &#8212;
 						a(href='http://maps.google.com/?daddr=' + (meetup.map || meetup.place), target='_blank') #{meetup.map} 
 				if meetup.state == 'active'
@@ -119,12 +121,15 @@ block content
 		article.section.section--featured.home-about: .container
 			h2 #{group.slogan}
 			.row: .col-sm-8.col-sm-offset-2
-				p.lead #{group.description.html} 
-				//30Mar15Tec: Jerry pls add facebook, meetup links as well. 
-				// there must be a test for empty field and a default txt
-				// the background image a the bottom for a group is in group.eventbottomimage	
-			if !user
-				.row: .col-sm-4.col-sm-offset-4
+				p.lead #{group.description.md}
+				p.byline: strong The organizing team: 
+				//- 01Apr15Tec: Listing the organisers of the group 
+			.section.highlight: .container
+				.row.about-organisers
+					each org in organisers
+						.col-sm-3
+							+organiser(org)
+			.row: .col-sm-4.col-sm-offset-4
 					a(href='/join', data-from=page.path).js-auth-trigger.btn.btn-lg.btn-block.btn-primary.mv-1
 						span.text-caps Join SydJS now
 			p.mt-1

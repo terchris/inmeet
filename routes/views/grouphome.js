@@ -23,6 +23,25 @@ exports = module.exports = function(req, res) {
 
     locals.rsvpStatus = {};
 
+    
+    //- 01Apr15Tec: Get the organisers of this group 
+    locals.organisers = [
+        { name: 'Jerry Kelih', image: 'http://www.gravatar.com/avatar/b27c61fae4c7c45abd2d47871c3fec9d?d=http%3A%2F%2Fsydjs.com%2Fimages%2Favatar.png&r=pg', url: '/member/jerry-kelih'},
+        { name: 'Terje Christensen', image: 'http://res.cloudinary.com/businessmodel/image/upload/c_thumb,f_auto,g_faces,h_600,w_600/v1427622621/nyiffok0xhghjbkblgtw.jpg', url: '/member/terje-christensen'},
+        { name: 'Gil Davidson',     image: '/images/organiser-gil_davidson.jpg' },
+        { name: 'Adam Ahmed',    image: '/images/organiser-adam_ahmed.jpg'     },
+        { name: 'Lachlan Hardy', image: '/images/organiser-lachlan_hardy.jpg'  }
+    ]
+
+    
+    
+   //-TODO skeleton for picking the organisers
+   // if attendee.isPublic
+   //     li: a(href=attendee.url, title=attendee.name.full)
+   // img(src=attendee.photo.exists ? attendee._.photo.thumbnail(80,80) : attendee.avatarUrl || '/images/avatar.png', width=40, height=40, alt=attendee.name.full).img-circle
+   // else
+   // li(title=attendee.name.full): img(src=attendee.photo.exists ? attendee._.photo.thumbnail(80,80) : attendee.avatarUrl || '/images/avatar.png', width=40, height=40, alt=attendee.name.full).img-circle
+
 
     // First find the Group
 
