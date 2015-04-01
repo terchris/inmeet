@@ -17,7 +17,7 @@ exports = module.exports = function(req, res) {
     var view = new keystone.View(req, res),
         locals = res.locals;
 
-    locals.section = 'home'; //Tec: change to grouphome ?
+    locals.section = 'home'; //30Mar15Tec: change to grouphome ?
     locals.meetup = false;
     locals.page.title = 'Welcome to SydJS';
 

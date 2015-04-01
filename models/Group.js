@@ -17,8 +17,8 @@ Group.add({
     name: { type: String, required: true },
     country: { type: Types.Select, options: 'Norway, Hungary, Australia, Germany, Poland, Brazil', default: 'Norway', index: true },
     logo: { type: Types.CloudinaryImage },
-    eventtopimage : { type: Types.CloudinaryImage },
-    eventbottomimage : { type: Types.CloudinaryImage },
+    eventTopImage : { type: Types.CloudinaryImage },
+    eventBottomImage : { type: Types.CloudinaryImage },
     slogan: { type: String, label: 'Slogan goes below the event' },
     description: { type: Types.Markdown, label: 'Description of the group goes below the event' },
     

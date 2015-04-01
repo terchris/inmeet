@@ -1,7 +1,4 @@
-//Created by tec on 30/03/15.
-// 30Mar15Tec: This fil e is a copy of the original index.jade file. It should probalbly be refactored 
-	// just testing if the changes are committed.
-	
+
 extends ../../layouts/default
 //- INCLUDES
 include ../../mixins/post
@@ -10,16 +7,39 @@ include ../../mixins/advertisement
 //- INTRO
 block intro
 	//- HERO
+		
+
+
 	if !meetup
-		h2.text-center You've just deployed a new site! Go add some data :)
-	else
 		article#hero.hero-meetup.hero-meetup--next
-			//- Intro
+			//- 01Apr15Tec: This top is displayed if there are no past or future meetups for the group 
 			section.hero-intro.hero-intro--hasmask
 				.hero-background
-					//30Mar15Tec: the background file is devined in hero.less I want the Group.logo to be placed here Jerry
-						// group background top image URL is in group.eventtopimage
-					//-img(src='/images/placeholders/sydney-1.jpg')
+					if group.eventTopImage.url
+						img(src=group.eventTopImage.url)
+					else
+						img(src='/images/placeholders/sydney-1.jpg') 
+						//- TODO replace the hardcoded sidney picture
+				.hero-intro-content
+					h1.title= group.name  
+					p.byline #{group.city} , #{group.country}
+					
+		
+
+		
+	else
+		article#hero.hero-meetup.hero-meetup--next
+			//- 01Apr15Tec: Deciding what top image to display. Priority is 1=meetup image, 2=group image, 3=default image
+			section.hero-intro.hero-intro--hasmask
+				.hero-background
+					if meetup.eventTopImage.url
+						img(src=meetup.eventTopImage.url)
+					else if group.eventTopImage.url
+						img(src=group.eventTopImage.url)
+					else
+						img(src='/images/placeholders/sydney-1.jpg')
+						//- TODO replace the hardcoded sidney picture
+
 				.hero-intro-content
 					h5.subtitle #{meetup.state == 'active' ? 'Next' : 'Last'} Meetup
 					h1.title= meetup.name

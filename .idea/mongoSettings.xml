@@ -12,6 +12,18 @@
           </option>
           <option name="userDatabase" value="sydjs" />
         </ServerConfiguration>
+        <ServerConfiguration>
+          <option name="label" value="Master MongoDB" />
+          <option name="password" value="6HkA1y9LtjrlY49Mj8aT" />
+          <option name="serverUrls">
+            <list>
+              <option value="bayol4zqekbc8g2.mongodb.clvrcld.net:27017" />
+            </list>
+          </option>
+          <option name="userDatabase" value="bayol4zqekbc8g2" />
+          <option name="userDatabaseAsMySingleDatabase" value="true" />
+          <option name="username" value="uyvjskrezpxeupx" />
+        </ServerConfiguration>
       </list>
     </option>
     <option name="shellPath" value="/usr/local/bin/mongo" />
