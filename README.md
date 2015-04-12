@@ -1,3 +1,9 @@
+inMeet
+=======
+How meetup.com was supposed to be, but never was.
+Created with years of experience of running a usergroup that spans cities, borders and continents.
+Built on the closest thing we could find to what we want. The sydjs.com 
+
 sydjs.com
 =========
 
