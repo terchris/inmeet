@@ -15,8 +15,9 @@ var keystone = require('keystone'),
 
 keystone.init({
 
-	'name': 'Innovation Meetups',
-	'brand': 'InMeet',
+	'name': process.env.SITE_NAME || 'Innovation Meetups',
+	'brand':  process.env.SITE_BRAND || 'InMeet',
+	'from_email' : process.env.SITE_FROM_EMAIL  || 'site_from_email@jalla.com',
 	'back': '/me',
 
 	'favicon': 'public/favicon.ico',
@@ -75,8 +76,8 @@ keystone.set('locals', {
 keystone.set('email locals', {
 	utils: keystone.utils,
 	host: (function() {
-		if (keystone.get('env') === 'staging') return 'http://sydjs-beta.herokuapp.com';
-		if (keystone.get('env') === 'production') return 'http://www.sydjs.com';
+		if (keystone.get('env') === 'staging') return process.env.SITE_STAGING_URL;
+		if (keystone.get('env') === 'production') return process.env.SITE_PRODUCTION_URL;
 		return (keystone.get('host') || 'http://localhost:') + (keystone.get('port') || '3000');
 	})()
 });

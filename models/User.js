@@ -245,12 +245,12 @@ User.schema.methods.resetPassword = function(callback) {
 		new keystone.Email('forgotten-password').send({
 			user: user,
 			link: '/reset-password/' + user.resetPasswordKey,
-			subject: 'Reset your SydJS Password',
+			subject: 'Reset your Password',
 			to: user.email,
 			from: {
-				name: 'SydJS',
-				email: 'contact@sydjs.com'
-			}
+				name: keystone.get('brand'),
+				email: keystone.get('from_email')
+			} 
 		}, callback);
 		
 	});
@@ -258,7 +258,7 @@ User.schema.methods.resetPassword = function(callback) {
 }
 
 
-/**
+/***
  * Registration
  * ============
 */
