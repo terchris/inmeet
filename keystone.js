@@ -38,7 +38,7 @@ keystone.init({
 	'user model': 'User',
 	'cookie secret': process.env.COOKIE_SECRET || 'sydjs',
 	
-	'mandrill api key': process.env.MANDRILL_KEY,
+	'mandrill api key': process.env.MANDRILL_API_KEY,
 
 	'google api key': process.env.GOOGLE_BROWSER_KEY,
 	'google server api key': process.env.GOOGLE_SERVER_KEY,
