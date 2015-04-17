@@ -1,10 +1,10 @@
 {
-  "name": "sydjs",
-  "version": "2.0.0",
+  "name": "inmeet",
+  "version": "0.1.0",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/JedWatson/sydjs-site.git"
+    "url": "https://github.com/terchris/inmeet"
   },
   "dependencies": {
     "async": "^0.9.0",
@@ -28,6 +28,6 @@
     "npm": "1.3.x"
   },
   "scripts": {
-    "start": "keystone.js"
+    "start": "node keystone.js"
   }
 }
