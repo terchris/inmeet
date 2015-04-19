@@ -107,6 +107,17 @@ User.add({
 			
 			accessToken: { type: String, label: 'Access Token', dependsOn: deps.twitter },
 			refreshToken: { type: String, label: 'Refresh Token', dependsOn: deps.twitter }
+		},
+		auth0: {
+			isConfigured: { type: Boolean, label: 'Authenticated by Auth0' },
+
+			profileId: { type: String, label: 'Profile ID', dependsOn: deps.twitter },
+
+			username: { type: String, label: 'Username', dependsOn: deps.twitter },
+			avatar: { type: String, label: 'Image', dependsOn: deps.twitter },
+
+			accessToken: { type: String, label: 'Access Token', dependsOn: deps.twitter },
+			refreshToken: { type: String, label: 'Refresh Token', dependsOn: deps.twitter }
 		}
 	}
 }, 'Meta', {

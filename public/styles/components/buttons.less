@@ -1,6 +1,7 @@
 //
 // Buttons
 // ==============================
+// TODO I just created a auth0 def by copying twitter def
 
 
 
@@ -86,6 +87,9 @@
 .btn-twitter {
 	.button-base(white; @brand-twitter; @brand-twitter);
 }
+.btn-auth0 {
+	.button-base(white; @brand-auth0; @brand-auth0);
+}
 
 // social links
 
@@ -115,6 +119,13 @@
 
 	&, &:hover, &:focus {
 		color: @brand-twitter;
+	}
+}
+.btn-link-auth0 {
+	.btn-link();
+
+	&, &:hover, &:focus {
+		color: @brand-auth0;
 	}
 }
 

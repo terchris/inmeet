@@ -2,6 +2,7 @@ var keystone = require('keystone'),
 	async = require('async');
 
 var services = {
+	auth0: require('../../lib/auth/auth0'),
 	github: require('../../lib/auth/github'),
 	facebook: require('../../lib/auth/facebook'),
 	google: require('../../lib/auth/google'),

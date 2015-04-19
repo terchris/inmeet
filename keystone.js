@@ -50,6 +50,8 @@ keystone.init({
 	'chartbeat property': process.env.CHARTBEAT_PROPERTY,
 	'chartbeat domain': process.env.CHARTBEAT_DOMAIN,
 
+	'intercom app id': process.env.INTERCOM_APP_ID,
+
 	'basedir': __dirname
 	
 });
@@ -70,7 +72,8 @@ keystone.set('locals', {
 	ga_property: keystone.get('ga property'),
 	ga_domain: keystone.get('ga domain'),
 	chartbeat_property: keystone.get('chartbeat property'),
-	chartbeat_domain: keystone.get('chartbeat domain')
+	chartbeat_domain: keystone.get('chartbeat domain'),
+	intercom_app_id: keystone.get('intercom app id')
 });
 
 keystone.set('email locals', {
