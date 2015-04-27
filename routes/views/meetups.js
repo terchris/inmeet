@@ -1,3 +1,4 @@
+// 27Apr15Tec: Added .populate('group')	to the queries so that the group name can be added to the display
 var keystone = require('keystone'),
 	moment = require('moment'),
 	RSVP = keystone.list('RSVP');
@@ -16,12 +17,14 @@ exports = module.exports = function(req, res) {
 		Meetup.model.findOne()
 			.where('state', 'active')
 			.sort('-startDate')
+			.populate('group')		
 	, 'talks[who]');
 	
 	view.query('pastMeetups',
 		Meetup.model.find()
 			.where('state', 'past')
 			.sort('-startDate')
+			.populate('group')
 	, 'talks[who]');
 	
 	view.on('render', function(next) {

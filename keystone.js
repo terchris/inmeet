@@ -90,7 +90,7 @@ keystone.set('email locals', {
 
 keystone.set('nav', {
 	'meetups': ['meetups', 'talks', 'rsvps'],
-	'members': ['users', 'organisations', 'groups' ],
+	'members': ['users', 'organisations', 'groups'],
 	'posts': ['posts', 'post-categories', 'post-comments'],
 	'links': ['links', 'link-tags', 'link-comments']
 });
