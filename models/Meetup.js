@@ -133,8 +133,8 @@ Meetup.schema.methods.notifyAttendees = function(req, res, next) {
 					subject: 'New meetup: ' + meetup.name,
 					to: attendee.email,
 					from: {
-						name: 'SydJS',
-						email: 'hello@sydjs.com'
+						name: keystone.get('brand'),
+						email: keystone.get('from_email')
 					}
 				}, next);
 			});

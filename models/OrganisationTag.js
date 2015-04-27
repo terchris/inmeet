@@ -1,6 +1,6 @@
 /**
- * Created by tec on 25/04/15.
- * Extending Organisations so that a organisation can be Sponsor, Case on a meetup, Event space for the meetup and so on
+ * Created by tec on 27/04/15.
+ * Extending Organisations so that a organisation can be Startup, Consulting company, or whatever tag is needed. 
  * A modified version of LinkTag.js 
  */
 var keystone = require('keystone'),

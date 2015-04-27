@@ -17,7 +17,6 @@ exports.initLocals = function(req, res, next) {
 		{ label: 'Meetups',		key: 'meetups',		href: '/meetups' },
 		{ label: 'Members',		key: 'members',		href: '/members' },
 		{ label: 'Blog',		key: 'blog',		href: '/blog' },
-		{ label: 'Showbag',		key: 'showbag',		href: '/showbag' },
 		{ label: 'Groups',		key: 'groups',		href: '/groups' }
 	];
 	
@@ -26,7 +25,7 @@ exports.initLocals = function(req, res, next) {
 	locals.basedir = keystone.get('basedir');
 	
 	locals.page = {
-		title: 'SydJS',
+		title: keystone.get('brand'),
 		path: req.url.split("?")[0] // strip the query - handy for redirecting back to the page
 	};
 	
