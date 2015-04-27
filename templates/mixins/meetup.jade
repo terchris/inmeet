@@ -1,8 +1,27 @@
 include meetup-talk
-
+//- TODO Jerry can u replace the use of the design in li.member-item . I have just used this definition to display data
+//-	I want the group tile and the venue tile to be displayed under the date tile.
+//- The image of the group is round. pls mage it square
+//- The venue tile is not filled with data yet. It will take its data and logo from the organisation that is the venue see for listing /organisations	
+	
 mixin meetup(meetup)
 
 	- var today = new Date();
+
+	li.member-item
+		.member.member--card
+			.member-section.member__photo
+				if meetup.group.logo.exists
+					a(href='/group/' + meetup.group.key).post-image: img(src=meetup.group._.logo.thumbnail(600,320), alt=meetup.group.name).img-responsive
+			.member-section.member__info
+				h5.member__title= meetup.group.name
+			.member__bio= meetup.group.slogan
+		.member.member--card
+			.member-section.member__photo
+				a(href='http://www.sol.no'): img(src=('/images/avatar.png'), alt='alt teksten', width=180, height=180)
+			.member-section.member__info
+				h5.member__title='-:' + meetup.group.key + ':-'
+			.member__bio='Venue address'
 
 	.tile.ph-1.pv-1
 		.meetup-calendar.calendar.hidden-xs.hidden-sm(class=meetup.state == 'past' ? 'calendar--past' : null)
@@ -10,7 +29,8 @@ mixin meetup(meetup)
 			.calendar__body
 				.calendar__date=meetup._.startDate.format('DD')
 				.calendar__year=meetup._.startDate.format('YYYY')
-		.meetup-content
+
+	.meetup-content
 			h2.mv-5= meetup.name
 			h5.mb-1=meetup._.startDate.format('dddd D MMM YYYY')
 				|  from #{meetup._.startDate.format('h:mma')} - #{meetup._.endDate.format('h:mma')}

@@ -19,6 +19,7 @@ exports = module.exports = function(req, res) {
 	view.on('init', function(next) {
 		Meetup.model.findOne()
 			.where('key', req.params.meetup)
+			.populate('group')
 			.exec(function(err, meetup) {
 				
 				if (err) return res.err(err);
@@ -26,7 +27,6 @@ exports = module.exports = function(req, res) {
 				
 				locals.meetup = meetup;
 				locals.meetup.populateRelated('talks[who] rsvps[who]', next);
-				
 			});
 	});
 	
