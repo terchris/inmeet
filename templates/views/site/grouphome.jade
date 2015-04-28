@@ -19,9 +19,7 @@ block intro
 				.hero-background
 					if group.eventTopImage.url
 						img(src=group.eventTopImage.url)
-					else
-						img(src='/images/placeholders/sydney-1.jpg') 
-						//- TODO replace the hardcoded sidney picture
+					
 				.hero-intro-content
 					h1.title= group.name  
 					p.byline #{group.city} , #{group.country}
@@ -38,9 +36,6 @@ block intro
 						img(src=meetup.eventTopImage.url)
 					else if group.eventTopImage.url
 						img(src=group.eventTopImage.url)
-					else
-						img(src='/images/placeholders/sydney-1.jpg')
-						//- TODO replace the hardcoded sidney picture
 
 				.hero-intro-content
 					h5.subtitle #{meetup.state == 'active' ? 'Next' : 'Last'} Meetup
