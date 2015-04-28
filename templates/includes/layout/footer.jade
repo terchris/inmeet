@@ -3,10 +3,10 @@ footer.site-footer.site-footer--sticky: .container
 	.row
 		.col-sm-4
 			h5.footer-heading About
-			p Every 3rd Wednesday of the month you'll find us talking about what we're doing and what's happening around us in the world of JavaScript. 
+			p We are a community focused on Business Model Innovation.  
 			ul.list-inline
-				li: a(href='/about') More about SydJS
-				li: a(href='mailto:craig.sharkie+sydjs@gmail.com') Contact us
+				li: a(href='/about') More about #{brand}
+				li: a(href='mailto:#{from_email}') Contact us
 
 		.col-sm-8
 			.row
@@ -24,11 +24,11 @@ footer.site-footer.site-footer--sticky: .container
 						li: a(href='/organisations') Organisations
 						li: a(href='/links') Links
 						li: a(href='/blog') Blog
-						li: a(href='/showbag') Showbag
+
 				.col-xs-4
 					h5.footer-heading Sponsors
 					ul: each sponsor in sponsors
 						li: a(href='/organisations#' + sponsor.id)= sponsor.name
 	.row.footer-copyright
-		p Copyright &copy; 2014 SydJS. Powered by <a href='http://keystonejs.com', target='_blank'>KeystoneJS</a>.
-		p If you run a meetup, please feel free to clone our site and make your own! You can <a href="https://github.com/JedWatson/sydjs-site", target='_blank'>find it on GitHub</a>.
+		p Copyright &copy; 2014 #{brand}. Powered by <a href='http://keystonejs.com', target='_blank'>KeystoneJS</a>.
+		p If you run a meetup, please feel free to clone our site and make your own! We forked it from www.SydJS.com and extended it. You can fork our site <a href="https://github.com/terchris/inmeet", target='_blank'>find it on GitHub</a>.

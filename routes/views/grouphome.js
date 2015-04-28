@@ -24,7 +24,7 @@ exports = module.exports = function(req, res) {
     locals.rsvpStatus = {};
 
     
-    //- 01Apr15Tec: Get the organisers of this group 
+    //- TODO read the organisers from the database 
     locals.organisers = [
         { name: 'Jerry Kelih', image: 'http://www.gravatar.com/avatar/b27c61fae4c7c45abd2d47871c3fec9d?d=http%3A%2F%2Fsydjs.com%2Fimages%2Favatar.png&r=pg', url: '/member/jerry-kelih'},
         { name: 'Terje Christensen', image: 'http://res.cloudinary.com/businessmodel/image/upload/c_thumb,f_auto,g_faces,h_600,w_600/v1427622621/nyiffok0xhghjbkblgtw.jpg', url: '/member/terje-christensen'},

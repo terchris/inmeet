@@ -64,7 +64,7 @@ Post.schema.methods.notifyAdmins = function(callback) {
 				admin: admin.name.first || admin.name.full,
 				author: results.author ? results.author.name.full : 'Somebody',
 				title: post.title,
-				keystoneURL: 'http://www.sydjs.com/keystone/post/' + post.id, //TODO replace with variable for host we are running on
+				keystoneURL: keystone.get('host') + '/keystone/post/' + post.id, 
 				subject: 'New Post to ' + keystone.get('brand')
 			}, {
 				to: admin,

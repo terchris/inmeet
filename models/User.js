@@ -60,7 +60,7 @@ User.add({
 		want: { type: String, label: 'Wants...', dependsOn: deps.mentoring }
 	}
 }, 'Permissions', {
-	isAdmin: { type: Boolean, label: 'Can Admin SydJS' },
+	isAdmin: { type: Boolean, label: 'Can Admin inMee' },
 	isVerified: { type: Boolean, label: 'Has a verified email address' }
 }, 'Services', {
 	services: {
@@ -225,7 +225,7 @@ User.schema.virtual('avatarUrl').get(function() {
 	if (this.services.google.isConfigured && this.services.google.avatar) return this.services.google.avatar;
 	if (this.services.twitter.isConfigured && this.services.twitter.avatar) return this.services.twitter.avatar;
 	
-	if (this.gravatar) return 'http://www.gravatar.com/avatar/' + this.gravatar + '?d=http%3A%2F%2Fsydjs.com%2Fimages%2Favatar.png&r=pg';
+	if (this.gravatar) return 'http://www.gravatar.com/avatar/' + this.gravatar + '?d=' + keystone.get('host') + '/images/avatar.png&r=pg';
 	
 });
 

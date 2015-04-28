@@ -37,7 +37,7 @@ keystone.init({
 	'session store': 'mongo',
 	'auth': true,
 	'user model': 'User',
-	'cookie secret': process.env.COOKIE_SECRET || 'sydjs',
+	'cookie secret': process.env.COOKIE_SECRET || 'inmeet',
 	
 	'mandrill api key': process.env.MANDRILL_API_KEY,
 
@@ -73,7 +73,10 @@ keystone.set('locals', {
 	ga_domain: keystone.get('ga domain'),
 	chartbeat_property: keystone.get('chartbeat property'),
 	chartbeat_domain: keystone.get('chartbeat domain'),
-	intercom_app_id: keystone.get('intercom app id')
+	intercom_app_id: keystone.get('intercom app id'),
+	name: keystone.get('name'),
+	brand: keystone.get('brand'),
+	from_email : keystone.get('from_email')
 });
 
 keystone.set('email locals', {
@@ -87,7 +90,7 @@ keystone.set('email locals', {
 
 keystone.set('nav', {
 	'meetups': ['meetups', 'talks', 'rsvps'],
-	'members': ['users', 'organisations', 'groups' ],
+	'members': ['users', 'organisations', 'groups'],
 	'posts': ['posts', 'post-categories', 'post-comments'],
 	'links': ['links', 'link-tags', 'link-comments']
 });

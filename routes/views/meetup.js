@@ -9,7 +9,7 @@ exports = module.exports = function(req, res) {
 		locals = res.locals;
 	
 	locals.section = 'meetups';
-	locals.page.title = 'Meetups - SydJS';
+	locals.page.title = 'Meetups - '+ keystone.get('brand');
 	
 	locals.rsvpStatus = {};
 	
@@ -19,6 +19,9 @@ exports = module.exports = function(req, res) {
 	view.on('init', function(next) {
 		Meetup.model.findOne()
 			.where('key', req.params.meetup)
+			.populate('group')
+			.populate('case.organisation')
+			.populate('case.presenter')
 			.exec(function(err, meetup) {
 				
 				if (err) return res.err(err);
@@ -26,7 +29,6 @@ exports = module.exports = function(req, res) {
 				
 				locals.meetup = meetup;
 				locals.meetup.populateRelated('talks[who] rsvps[who]', next);
-				
 			});
 	});
 	
