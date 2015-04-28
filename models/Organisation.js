@@ -13,10 +13,12 @@ var Organisation = new keystone.List('Organisation', {
 
 Organisation.add({
 		name: {type: String, index: true},
+		slogan: {type: String, index: true},
 		logo: {type: Types.CloudinaryImage},
 		website: Types.Url,
 		location: Types.Location,
-		description: {type: Types.Markdown}
+		description: {type: Types.Markdown},
+		adminuser: { type: Types.Relationship, ref: 'User',label: 'Admin user for organisation' }
 }, 'Type of Organisation', {
 	organisationType: {
 		sponsor: { type: Boolean, label: 'Sponsor'},

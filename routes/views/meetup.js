@@ -20,6 +20,8 @@ exports = module.exports = function(req, res) {
 		Meetup.model.findOne()
 			.where('key', req.params.meetup)
 			.populate('group')
+			.populate('case.organisation')
+			.populate('case.presenter')
 			.exec(function(err, meetup) {
 				
 				if (err) return res.err(err);

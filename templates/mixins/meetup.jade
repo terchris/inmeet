@@ -20,8 +20,8 @@ mixin meetup(meetup)
 			.member-section.member__photo
 				a(href='http://www.sol.no'): img(src=('/images/avatar.png'), alt='alt teksten', width=180, height=180)
 			.member-section.member__info
-				h5.member__title='-:' + meetup.group.key + ':-'
-			.member__bio='Venue address'
+				h5.member__title='Venue name'
+			.member__bio='Venue address is google maps link'
 
 	.tile.ph-1.pv-1
 		.meetup-calendar.calendar.hidden-xs.hidden-sm(class=meetup.state == 'past' ? 'calendar--past' : null)
@@ -41,8 +41,45 @@ mixin meetup(meetup)
 				ul.meetup-talks
 					each talk in meetup.talks
 						+meetup-talk(talk)
+				
+				
+				
+			//-TODO Jerry: I have found the fields and the IF´s needed related to Case-of-the-evening. Can you find a nice way of displaying the fields
+			if meetup.case.name	
+				h2.mv-5= 'case name: ' +meetup.case.name
+			if meetup.case.description	
+				p!= 'case description: ' +meetup.case.description
+			if meetup.case.feedback	
+				p!= 'case feedback: ' + meetup.case.feedback
+				
+		
+		
+			if meetup.case.presenter
+				p!= 'foto: ' +meetup.case.presenter.avatarUrl
+				if meetup.case.presenter.name
+					h2.mv-5= 'case presenter: ' + meetup.case.presenter.name.full
+				if meetup.case.presenter.avatarUrl	
+					img(src=meetup.case.presenter.avatarUrl , width=40, height=40, alt=meetup.case.presenter.name.full).talk__photo
+					
+				
+			if meetup.case.organisation
+				if meetup.case.organisation.name
+					h2.mv-5= 'org name: ' + meetup.case.organisation.name
+				if meetup.case.organisation.logo
+					p!= 'org logo: ' + meetup.case.organisation.logo.url 
+				if meetup.case.organisation.key
+					p!= 'org key "/organisations/ :"' + meetup.case.organisation.key
+				if meetup.case.organisation.key && meetup.case.organisation.logo && meetup.case.organisation.name	
+					a(href='/organisations/' + meetup.case.organisation.key)
+						img(src=meetup.case.organisation.logo.url, alt=meetup.case.organisation.name)
+				
+			
+			
+			
+			
 
-		if meetup.state == 'active'
+
+	if meetup.state == 'active'
 			hr.mv-2
 			if user
 				if meetup.rsvpsAvailable || rsvpStatus.rsvped && rsvpStatus.attending
