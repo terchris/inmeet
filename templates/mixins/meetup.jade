@@ -8,20 +8,7 @@ mixin meetup(meetup)
 
 	- var today = new Date();
 
-	li.member-item
-		.member.member--card
-			.member-section.member__photo
-				if meetup.group.logo.exists
-					a(href='/group/' + meetup.group.key).post-image: img(src=meetup.group._.logo.thumbnail(600,320), alt=meetup.group.name).img-responsive
-			.member-section.member__info
-				h5.member__title= meetup.group.name
-			.member__bio= meetup.group.slogan
-		.member.member--card
-			.member-section.member__photo
-				a(href='http://www.sol.no'): img(src=('/images/avatar.png'), alt='alt teksten', width=180, height=180)
-			.member-section.member__info
-				h5.member__title='Venue name'
-			.member__bio='Venue address is google maps link'
+	
 
 	.tile.ph-1.pv-1
 		.meetup-calendar.calendar.hidden-xs.hidden-sm(class=meetup.state == 'past' ? 'calendar--past' : null)
@@ -29,11 +16,30 @@ mixin meetup(meetup)
 			.calendar__body
 				.calendar__date=meetup._.startDate.format('DD')
 				.calendar__year=meetup._.startDate.format('YYYY')
+				
+
 
 	.meetup-content
 			h2.mv-5= meetup.name
 			h5.mb-1=meetup._.startDate.format('dddd D MMM YYYY')
 				|  from #{meetup._.startDate.format('h:mma')} - #{meetup._.endDate.format('h:mma')}
+			
+				
+			.group.group--card
+				.group-section.group__photo
+					if meetup.group.logo.exists
+						a(href='/group/' + meetup.group.key) 
+				.group-section.group__info
+					h5.group__title= meetup.group.name
+				.group__bio= meetup.group.slogan
+				
+			.venue.venue--card
+				
+				.venue-section.venue__info
+					h5.venue__title='Venue name'
+				.venue__bio='Venue address is google maps link'
+				
+				
 			if meetup.description
 				p!= meetup.description
 			if meetup.talks.length
@@ -41,9 +47,7 @@ mixin meetup(meetup)
 				ul.meetup-talks
 					each talk in meetup.talks
 						+meetup-talk(talk)
-				
-				
-				
+						
 			//-TODO Jerry: I have found the fields and the IF´s needed related to Case-of-the-evening. Can you find a nice way of displaying the fields
 			if meetup.case.name	
 				h2.mv-5= 'case name: ' +meetup.case.name
