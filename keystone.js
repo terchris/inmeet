@@ -18,6 +18,10 @@ keystone.init({
 	'name': process.env.SITE_NAME || 'Innovation Meetups',
 	'brand':  process.env.SITE_BRAND || 'InMeet',
 	'from_email' : process.env.SITE_FROM_EMAIL  || 'site_from_email@jalla.com',
+	'twitter_id' : process.env.SITE_TWITTER_ID  || 'businessmodel_',
+	'inme_about_txt' : process.env.SITE_ABOUT_TXT  || 'We are a community focused innovation.',
+	'inme_home_heading' : process.env.SITE_HOME_HEADING  || 'Want to be more creative and innovate faster? Then you need to join us ',
+	'inme_home_txt' : process.env.SITE_HOME_TXT  || 'Join one of the groups in Oslo, Bergen, Stavanger, Trondheim, Krakow, Budapest, Berlin, Rio, Melbourne or start your own',
 	'back': '/me',
 
 	'favicon': 'public/favicon.ico',
@@ -76,7 +80,11 @@ keystone.set('locals', {
 	intercom_app_id: keystone.get('intercom app id'),
 	name: keystone.get('name'),
 	brand: keystone.get('brand'),
-	from_email : keystone.get('from_email')
+	twitter_id: keystone.get('twitter_id'),
+	from_email : keystone.get('from_email'),
+	inme_about_txt : keystone.get('inme_about_txt'),
+	inme_home_heading : keystone.get('inme_home_heading'),
+	inme_home_txt : keystone.get('inme_home_txt')
 });
 
 keystone.set('email locals', {

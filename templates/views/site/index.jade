@@ -19,7 +19,7 @@ block intro
 			//- Intro
 			section.hero-intro.hero-intro--hasmask
 				.hero-background
-					//-img(src='/images/placeholders/sydney-1.jpg')
+					
 				.hero-intro-content
 					h5.subtitle #{meetup.state == 'active' ? 'Next' : 'Last'} Meetup
 					h1.title= meetup.name
@@ -102,9 +102,9 @@ block content
 		
 		//- About
 		article.section.section--featured.home-about: .container
-			h2 In Sydney and into JavaScript? You need to join SydJS!
+			h2 #{inme_home_heading}
 			.row: .col-sm-8.col-sm-offset-2
-				p.lead Every 3rd Wednesday of the month you'll find us talking about what we're doing and what's happening around us in the world of JavaScript.
+				p.lead #{inme_home_txt}
 			if !user
 				.row: .col-sm-4.col-sm-offset-4
 					a(href='/join', data-from=page.path).js-auth-trigger.btn.btn-lg.btn-block.btn-primary.mv-1
@@ -113,7 +113,7 @@ block content
 				a(href='/about') Learn more about #{brand}
 				|  &nbsp;&middot;&nbsp; 
 				a(href='/members') Find your friends in #{brand}
-			p.mt-1: a(href="https://twitter.com/sydjs", class="twitter-follow-button", data-show-count="true", data-size="large") Follow @sydjs
+			p.mt-1: a(href="https://twitter.com/#{twitter_id}", class="twitter-follow-button", data-show-count="true", data-size="large") Follow @#{twitter_id}
 //- JS
 block js
 	//- twitter

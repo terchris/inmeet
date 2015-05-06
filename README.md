@@ -4,6 +4,27 @@ How meetup.com was supposed to be, but never was.
 Created with years of experience of running a usergroup that spans cities, borders and continents.
 Built on the closest thing we could find to what we want. The sydjs.com 
 
+
+
+## Replacing image files
+File - comment - path 
+
+* favicon.ico - browser icon - /public/
+
+* def-meetup-img.jpg - default meetup image. This is displayed if the meetup or the meetup group does not have a image - /public/images/placeholders/
+
+* app-icon-android.png - logo for android app if u have one - /public/images/
+
+* app-icon.png - logo for iphone app if u have one - /public/images/
+
+* email-logo.gif - logo that is sent in emails - /public/images/
+
+* logo.svg - logo for the site - /public/images/
+
+* logo-inverted.svg - inverted logo for the site - /public/images/
+
+
+
 sydjs.com
 =========
 
