@@ -65,7 +65,10 @@ exports = module.exports = function(app) {
 
 	app.get('/groups', routes.views.groups); // 29Mar15Tec: lists all groups
 	app.get('/group/:group', routes.views.grouphome); //30Mar15Tec: this is the group "homepage"
-	
+
+	app.get('/cases', routes.views.cases);
+	app.get('/cases/:category?', routes.views.cases);
+//TODO	app.get('/case/:case', routes.views.casehome); 
 	
 	
 	// Session

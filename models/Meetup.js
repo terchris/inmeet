@@ -81,7 +81,7 @@ Meetup.add({
 
 Meetup.relationship({ ref: 'Talk', refPath: 'meetup', path: 'talks' });
 Meetup.relationship({ ref: 'RSVP', refPath: 'meetup', path: 'rsvps' });
-
+Meetup.relationship({ ref: 'Case', refPath: 'meetup', path: 'meetups' });
 
 
 

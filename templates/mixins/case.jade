@@ -1,0 +1,13 @@
+mixin case(post)
+	.col-sm-4
+		article(role="article", itemscope itemtype="http://schema.org/BlogPosting").post-card
+			if post.image.exists
+				a(href='/cases/case/' + post.slug).post-image: img(src=post._.image.thumbnail(600,320), alt=post.title).img-responsive
+			.post-summary
+				.post-byline
+					.post-author: a(href='/cases/case/' + post.slug)=post.name
+
+
+				h4(itemprop='name').post-title.mv-1
+					a(href='/cases/case/' + post.slug, itemprop='url')=post.name
+				.post-content-brief(itemprop='description')!= post.description

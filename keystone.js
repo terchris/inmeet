@@ -19,7 +19,7 @@ keystone.init({
 	'brand':  process.env.SITE_BRAND || 'InMeet',
 	'from_email' : process.env.SITE_FROM_EMAIL  || 'site_from_email@jalla.com',
 	'twitter_id' : process.env.SITE_TWITTER_ID  || 'businessmodel_',
-	'inme_about_txt' : process.env.SITE_ABOUT_TXT  || 'We are a community focused innovation.',
+	'inme_about_txt' : process.env.SITE_ABOUT_TXT  || 'We are a community focused on innovation.',
 	'inme_home_heading' : process.env.SITE_HOME_HEADING  || 'Want to be more creative and innovate faster? Then you need to join us ',
 	'inme_home_txt' : process.env.SITE_HOME_TXT  || 'Join one of the groups in Oslo, Bergen, Stavanger, Trondheim, Krakow, Budapest, Berlin, Rio, Melbourne or start your own',
 	'back': '/me',
@@ -98,9 +98,11 @@ keystone.set('email locals', {
 
 keystone.set('nav', {
 	'meetups': ['meetups', 'talks', 'rsvps'],
-	'members': ['users', 'organisations', 'groups'],
+	'members': ['users', 'groups'],
 	'posts': ['posts', 'post-categories', 'post-comments'],
-	'links': ['links', 'link-tags', 'link-comments']
+	'links': ['links', 'link-tags', 'link-comments'],
+	'organisations': ['organisations', 'organisation-tags'],
+	'cases': ['cases', 'case-tags']
 });
 
 keystone.start();

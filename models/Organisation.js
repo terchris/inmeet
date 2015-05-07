@@ -38,6 +38,7 @@ Organisation.add({
  */
 
 Organisation.relationship({ ref: 'User', refPath: 'organisation', path: 'members' });
+Organisation.relationship({ ref: 'Case', refPath: 'organisation', path: 'cases' });
 
 
 /**

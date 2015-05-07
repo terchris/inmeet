@@ -268,6 +268,14 @@ User.schema.methods.resetPassword = function(callback) {
 	
 }
 
+/**
+ * Relationships
+ * =============
+ */
+
+User.relationship({ ref: 'Case', refPath: 'presenter', path: 'presenters' });
+User.relationship({ ref: 'Talk', refPath: 'who', path: 'talks' });
+
 
 /***
  * Registration
