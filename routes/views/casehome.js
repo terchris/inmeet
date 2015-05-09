@@ -34,9 +34,9 @@ exports = module.exports = function(req, res) {
                 
                 
                 // Create the feedback opbject
-                locals.feedback.text = locals.casehome.feedback;
-                locals.feedback.presenter = locals.casehome.presenter;
-                locals.feedback.presenter.bio = locals.casehome.presenter.bio;
+               // locals.feedback.text = locals.casehome.feedback;
+               // locals.feedback.presenter = locals.casehome.presenter;
+               // locals.feedback.presenter.bio = locals.casehome.presenter.bio;
                 
                 next();
 
