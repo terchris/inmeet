@@ -15,7 +15,7 @@ var Case = new keystone.List('Case', {
 Case.add({
 
     name: {type: String, required: true, initial: true},
-    description: { type: Types.Markdown },
+    description: {type: Types.Html, wysiwyg: true},
     image: { type: Types.CloudinaryImage },
     presenter: { type: Types.Relationship, ref: 'User', index: true },
     meetup: { type: Types.Relationship, ref: 'Meetup', index: true },

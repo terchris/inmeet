@@ -68,7 +68,7 @@ exports = module.exports = function(app) {
 
 	app.get('/cases', routes.views.cases);
 	app.get('/cases/:category?', routes.views.cases);
-//TODO	app.get('/case/:case', routes.views.casehome); 
+	app.get('/case/:case', routes.views.casehome); 
 	
 	
 	// Session

@@ -1,0 +1,59 @@
+extends ../../layouts/default
+
+include ../../mixins/feedback
+
+block content
+	.container-sm
+		a(href='/cases').text-muted &larr; Back to the cases
+		article.full-post
+			if !casehome
+				h2 Invalid Case.
+			else
+				header
+					h1.blog-post__title= casehome.name
+					p.blog-post__byline 
+
+						if casehome.tags && casehome.tags.length
+							|  Tags&nbsp;
+							each cat, cat_i in casehome.tags
+								a(href='/cases/' + cat.key)= cat.name
+								if cat_i < casehome.tags.length - 1
+									| ,&nbsp;
+								else
+									| &nbsp;
+					//- sharing buttons
+					.share-buttons
+						span.share-button
+							.fb-like(data-href="http://www.sydjs.com/blog/post/" + casehome.slug, data-colorscheme="light", data-layout="button_count", data-action="like", data-show-faces="false", data-send="false")
+						span.share-button
+							a(href="https://twitter.com/share", data-via="SydJS", data-hashtags="sydjs", data-count="button", data-dnt="true").twitter-share-button Tweet
+						span.share-button
+							.g-plusone(data-size="medium")
+				if casehome.image.exists
+					.post-image.mv-3: img(src=casehome._.image.fit(720, 420)).img-responsive.img-thumbnail
+				!= casehome.description
+
+
+
+				if casehome.presenter
+					|  Presented by&nbsp;
+					a(href='/members', rel='author')=casehome.presenter.name.full
+					
+					.member.member--card
+						.member-section.member__photo
+							a(href=casehome.presenter.url): img(src=(casehome.presenter.photo.exists ? casehome.presenter._.photo.thumbnail(360, 360) : casehome.presenter.avatarUrl || '/images/avatar.png'), alt=casehome.presenter.name.full, width=180, height=180)
+							
+						.member-section.member__info
+							h5.member__title(class=(casehome.presenter.bio.html ? null : 'member__title-only')): a(href=casehome.presenter.url)= casehome.presenter.name.full
+							if casehome.presenter.bio.html
+								.member__bio!=utils.cropString(utils.htmlToText(casehome.presenter.bio.html), 50, '...', true)
+						.col-xs-9
+							.talk-summary
+								h5.title Feedback
+								p.subtitle.mb-1 FRA 
+								.summary!= casehome.feedback
+
+
+block js
+	script(src='/js/common/share.js')
+	script(src="https://apis.google.com/js/plusone.js")

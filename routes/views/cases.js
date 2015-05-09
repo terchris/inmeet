@@ -27,7 +27,7 @@ exports = module.exports = function(req, res) {
             }
 
             locals.data.categories = results;
-            console.log('[cases] - tags:', results);
+
             
 
             // Load the counts for each category
@@ -35,8 +35,6 @@ exports = module.exports = function(req, res) {
 
                 keystone.list('Case').model.count().where('tags').in([category.id]).exec(function(err, count) {
                     category.postCount = count;
-                    console.log('[cases] - count:', count);
-                    console.log('[cases] - category.id:', category.id);
                     next(err);
                 });
 
@@ -52,7 +50,7 @@ exports = module.exports = function(req, res) {
     view.on('init', function(next) {
 
         if (req.params.category) {
-            console.log('[cases] - there is a param :', req.params.category);
+
             keystone.list('CaseTag').model.findOne({ key: locals.filters.category }).exec(function(err, result) {
                 locals.data.category = result;
                 next(err);
@@ -69,13 +67,13 @@ exports = module.exports = function(req, res) {
         var q = keystone.list('Case').model.find().sort('-date').populate('presenter tags');
 
         if (locals.data.category) {
-            console.log('[cases] - locals.data.category =', locals.data.category);
+
             q.where('tags').in([locals.data.category]);
         }
 
         q.exec(function(err, results) {
             locals.data.posts = results;
-            console.log('[cases] - locals.data.posts =', locals.data.posts);
+
             next(err);
         });
 
